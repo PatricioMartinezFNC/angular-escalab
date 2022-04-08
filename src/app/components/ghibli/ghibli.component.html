@@ -1,0 +1,20 @@
+<div class="row row-cols-1 row-cols-md-5 g-4 m-4">
+  <div class="col" *ngFor="let dat of movies">
+    <div class="card">
+      <img
+        src="{{ dat.image }}"
+        class="card-img-top"
+      />
+      <div class="card-body">
+        <h3 class="card-title">{{ dat.title }}</h3>
+        <h6 class="card-title">{{ dat.original_title }}</h6>
+        <br />
+        <p class="card-text">Director : {{ dat.director }}</p>
+        <p class="card-text">Producer by {{ dat.producer }}</p>
+        <p class="card-text">
+          <small class="text-muted">Release date {{ dat.release_date }}</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

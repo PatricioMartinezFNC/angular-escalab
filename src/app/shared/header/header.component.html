@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <a class="navbar-brand"  routerLink="/home">
+      <img src="https://img.icons8.com/fluency/48/000000/dog-house.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+      HOME</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li>
+          <a class="navbar-brand" routerLink="/listado-ghibli">
+            <img src="https://img.icons8.com/plasticine/100/000000/totoro.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+             Ghibli
+          </a>
+        </li>
+        <li>
+          <a class="navbar-brand" routerLink="/listado-hp">
+            <img src="https://img.icons8.com/color/48/000000/harry-potter.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+             Harry Potter
+          </a>
+        </li>
+        <li>
+          <a class="navbar-brand" routerLink="/buscador-pokemon">
+            <img src="https://img.icons8.com/fluency/48/000000/pokemon.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+             Pokemón
+          </a>
+        </li>
+      </ul>
+
+      <form class="d-flex">
+        <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+          <button
+            class="btn btn-outline-danger"
+            (click)="auth.logout({ returnTo: document.location.origin })"
+          >
+            Log out
+          </button>
+        </ng-container>
+
+        <ng-template #loggedOut>
+          <button
+            class="btn btn-outline-success"
+            (click)="auth.loginWithRedirect()"
+          >
+            Log in
+          </button>
+        </ng-template>
+      </form>
+    </div>
+  </div>
+</nav>

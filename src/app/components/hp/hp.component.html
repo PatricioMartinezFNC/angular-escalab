@@ -1,0 +1,18 @@
+<div class="row row-cols-1 row-cols-md-6 g-4 m-4">
+    <div class="col" *ngFor="let dat of characters">
+      <div class="card">
+        <img
+              src="{{ dat.imagen }}"
+              class="card-img-top"
+              height="350" 
+              width="100"
+            />
+        <div class="card-body">
+          <h4 class="card-title">{{ dat.personaje }}</h4>
+              <p class="card-title">Alias : {{ dat.apodo }}</p>
+              <p class="card-title">House : {{ dat.casaDeHogwarts }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,42 @@
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card mb-3 " style="max-width: 540px">
+      <div class="row no-gutters">
+        <div class="col-md-3 d-flex align-items-center">
+          <img
+            src="{{ verPokemon.sprites.other['official-artwork'].front_default }}"
+            class="card-img"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">
+            <h5 class="card-title">Nombre : {{ verPokemon.name }}</h5>
+            <p class="card-text">Tipo : {{ verPokemon.types[0].type.name }}</p>
+
+            <div class="table-responsive-lg">
+                <table class="table">
+                    <thead>
+                        <tr>
+                          <th scope="col">HP</th>
+                          <th scope="col">Attack</th>
+                          <th scope="col">Defense</th>
+                          <th scope="col">Special Attack</th>
+                          <th scope="col">Special Defense</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{{verPokemon.stats[0].base_stat}}</td>
+                          <td>{{verPokemon.stats[1].base_stat}}</td>
+                          <td>{{verPokemon.stats[2].base_stat}}</td>
+                          <td>{{verPokemon.stats[3].base_stat}}</td>
+                          <td>{{verPokemon.stats[4].base_stat}}</td>
+                        </tr>
+                      </tbody>
+                </table>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
